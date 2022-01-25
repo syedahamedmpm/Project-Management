@@ -6,7 +6,8 @@ import App from './App';
 import Project from './Projects';
 import User from './Users';
 import Task from './Tasks';
+import DeveloperTaskDetails from './DeveloperTaskDetais';
 import registerServiceWorker from './registerServiceWorker';
 
-ReactDOM.render(<Task />, document.getElementById('root'));
+ReactDOM.render(<DeveloperTaskDetails />, document.getElementById('root'));
 registerServiceWorker();
