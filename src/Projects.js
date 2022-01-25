@@ -65,13 +65,21 @@ class Project extends React.Component{
     }
     updateProject = () =>{
         console.log("Working Up")
-        let {id,name} = this.state.editProject
-        console.log(id)
+        let {name} = this.state.editProject
+        console.log(this.state.editProject.id)
         console.log(name)
-        axios.put('http://localhost:3000/project/' + id,{name} )
+        axios.put('http://localhost:3000/project/' + this.state.editProject.id,{name} )
         .then((response)=>{
             this.refreshProject()
+            this.setState({
+                editProjectModal:false,
+                editProject:{
+                    id:'',
+                    name:''
+                }
+            })
         })
+        
     }
     toggleNewProjectModal = () =>{
         this.setState({
@@ -86,18 +94,24 @@ class Project extends React.Component{
     }
     handleOnChange = (e) =>{
         const target =e.target
+        console.log(target)
         const name = target.name
+        console.log(name)
         const value = target.value
+        console.log(value)
         this.setState({
             newProject:{
-                [name]:value
-            },
-            editProject:{
                 [name]:value
             }
         })
     }
-    
+    handleOnChangeUpdated = (e) =>{
+        let { editProject } = this.state;
+        editProject.name = e.target.value;
+        this.setState({
+            editProject
+        })
+    }
     render(){
         const {projects} =this.state
         let proj = projects.map(project=>{
@@ -147,18 +161,15 @@ class Project extends React.Component{
                     <Modal isOpen={this.state.editProjectModal} toggle={this.toggleEditProjectModal}>
                         <ModalHeader toggle={this.toggleEditProjectModal}>Edit Project</ModalHeader>
                         <ModalBody>
-                            <FormGroup>
-                                <Label for="id">Id</Label>
-                                <Input id="id" value={this.state.editProject.id} name="id" onChange={this.handleOnChange} />
-                            </FormGroup>
+                            
                             <FormGroup>
                                 <Label for="name">Name</Label>
-                                <Input id="name" value={this.state.editProject.name} name="name" onChange={this.handleOnChange} />
+                                <Input id="name" value={this.state.editProject.name} name="name" onChange={this.handleOnChangeUpdated} />
                             </FormGroup>
 
                         </ModalBody>
                         <ModalFooter>
-                            <Button color="primary" onClick={()=>this.updateProject()}>Edit Project</Button>{' '}
+                            <Button color="primary" onClick={this.updateProject}>Edit Project</Button>{' '}
                             <Button color="secondary" onClick={this.toggleEditProjectModal}>Cancel</Button>
                         </ModalFooter>
                     </Modal>
