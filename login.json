@@ -1,0 +1,25 @@
+{
+    "users": 
+    [
+
+        {
+            "name": "admin",
+            "password": "admin@123",
+            "userType": "admin"
+          },
+          {
+            "name": "Developer",
+            "password": "Developer@123",
+            "userType": "Developer"
+          },
+          {
+            "name": "Manager",
+            "password": "Manager@123",
+            "userType": "Manager"
+          }
+    ]
+
+
+
+}
+  

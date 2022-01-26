@@ -23,7 +23,7 @@ class Project extends React.Component{
         this.refreshProject()
     }
     refreshProject = () =>{
-        axios.get('http://localhost:3000/project/')
+        axios.get('http://localhost:8000/project/')
         .then((response)=>{
             console.log(response.data)
             this.setState({
@@ -33,7 +33,7 @@ class Project extends React.Component{
     }
     addProject = () => {
         const { newProject, projects } = this.state
-        axios.post('http://localhost:3000/project/', newProject)
+        axios.post('http://localhost:8000/project/', newProject)
             .then((response) => {
                 console.log(response.data)
                 projects.push(response.data)
@@ -48,7 +48,7 @@ class Project extends React.Component{
     }
     deleteProject = (id) =>{
         console.log(id)
-        axios.delete('http://localhost:3000/project/'+id)
+        axios.delete('http://localhost:8000/project/'+id)
         .then((response)=>{
             this.refreshProject()
         })
@@ -68,7 +68,7 @@ class Project extends React.Component{
         let {name} = this.state.editProject
         console.log(this.state.editProject.id)
         console.log(name)
-        axios.put('http://localhost:3000/project/' + this.state.editProject.id,{name} )
+        axios.put('http://localhost:8000/project/' + this.state.editProject.id,{name} )
         .then((response)=>{
             this.refreshProject()
             this.setState({

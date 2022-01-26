@@ -1,8 +1,8 @@
 {
   "project": [
     {
-      "id": 1,
-      "name": "Project 1"
+      "name": "Project 1",
+      "id": 1
     },
     {
       "name": "Project 2",
@@ -54,15 +54,17 @@
       "projectName": "Project 1",
       "assignTo": "Developer 1",
       "reviewTask": "Want To Work",
-      "status": "Pending"
+      "status": "Pending",
+      "devStatus": "Pending"
     },
     {
-      "id": "2",
       "taskName": "Task 2",
       "projectName": "Project 2",
       "assignTo": "Developer 2",
       "reviewTask": "Want To Work",
-      "status": "Pending"
+      "status": "Pending",
+      "devStatus": "Completed",
+      "id": "2"
     }
   ]
 }

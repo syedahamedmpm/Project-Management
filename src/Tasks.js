@@ -30,7 +30,7 @@ componentWillMount(){
     this.refreshUser()
 }
 refreshTasks = () =>{
-    axios.get('http://localhost:3000/task/')
+    axios.get('http://localhost:8000/task/')
     .then((response)=>{
         console.log(response.data)
         this.setState({
@@ -39,7 +39,7 @@ refreshTasks = () =>{
     })
 }
 refreshProject = () =>{
-    axios.get('http://localhost:3000/project/')
+    axios.get('http://localhost:8000/project/')
     .then((response)=>{
         console.log(response.data)
         this.setState({
@@ -48,7 +48,7 @@ refreshProject = () =>{
     })
 }
 refreshUser = () =>{
-    axios.get('http://localhost:3000/User/')
+    axios.get('http://localhost:8000/User/')
     .then((response)=>{
         console.log(response.data)
         this.setState({
@@ -59,7 +59,7 @@ refreshUser = () =>{
 addTask = ()=>{
     console.log(this.state.newTask)
     let {newTask,tasks} = this.state
-    axios.post('http://localhost:3000/task/',newTask)
+    axios.post('http://localhost:8000/task/',newTask)
     .then((response) =>{
         tasks.push(response.data)
         this.setState({
