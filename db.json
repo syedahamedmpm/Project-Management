@@ -1,0 +1,70 @@
+{
+  "project": [
+    {
+      "name": "Project 1",
+      "id": 1
+    },
+    {
+      "name": "Project 2",
+      "id": 2
+    },
+    {
+      "name": "Project 3",
+      "id": 3
+    },
+    {
+      "name": "Project 4",
+      "id": 4
+    },
+    {
+      "name": "Project 5",
+      "id": 5
+    },
+    {
+      "name": "Project 6",
+      "id": 6
+    }
+  ],
+  "user": [
+    {
+      "name": "Admin",
+      "id": 1,
+      "userType": "Admin"
+    },
+    {
+      "name": "Manager",
+      "id": 2,
+      "userType": "Manager"
+    },
+    {
+      "name": "Developer 1",
+      "id": 3,
+      "userType": "Developer"
+    },
+    {
+      "name": "Developer 2",
+      "id": 4,
+      "userType": "Developer"
+    }
+  ],
+  "task": [
+    {
+      "id": "1",
+      "taskName": "Task 1",
+      "projectName": "Project 1",
+      "assignTo": "Developer 1",
+      "reviewTask": "Want To Work",
+      "status": "Pending",
+      "devStatus": "Pending"
+    },
+    {
+      "taskName": "Task 2",
+      "projectName": "Project 2",
+      "assignTo": "Developer 2",
+      "reviewTask": "Want To Work",
+      "status": "Pending",
+      "devStatus": "Completed",
+      "id": "2"
+    }
+  ]
+}
