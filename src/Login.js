@@ -1,6 +1,6 @@
 import React from "react";
 import axios from "axios";
-import { Button, Input } from "reactstrap";
+import { Button, Input,Card,CardBody } from "reactstrap";
 
 class Login extends React.Component{
     constructor(){
@@ -56,32 +56,40 @@ class Login extends React.Component{
     }
     render(){
         return(
-            <div className="App container">
-                <Input
-                type="text"
-                name="name"
-                value={this.state.loggedinUser.name}
-                onChange={this.handleOnChange}
-                />
-                <Input
-                type="password"
-                name="password"
-                value={this.state.loggedinUser.password}
-                onChange={this.handleOnChange}
-                />
+            <div className="login-pos">
+                <Card className="cards">
+                    <CardBody>
+                        <Input
+                            type="text"
+                            className="mb-3"
+                            name="name"
+                            value={this.state.loggedinUser.name}
+                            onChange={this.handleOnChange}
+                        />
+                        <Input
+                            type="password"
+                            className="mb-3"
+                            name="password"
+                            value={this.state.loggedinUser.password}
+                            onChange={this.handleOnChange}
+                        />
 
-                <Input
-                type="select"
-                name="userType"
-                value={this.state.loggedinUser.userType}
-                onChange={this.handleOnChange}
-                >
-                    <option>Admin</option>
-                    <option>Manager</option>
-                    <option>Developer</option>
-                </Input>
+                        <Input
+                            type="select"
+                            name="userType"
+                            className="mb-3"
+                            value={this.state.loggedinUser.userType}
+                            onChange={this.handleOnChange}
+                        >
+                            <option>Admin</option>
+                            <option>Manager</option>
+                            <option>Developer</option>
+                        </Input>
 
-                <Button color="primary" size="lg" onClick={this.loggedIn}>Login</Button>
+                        <Button className="w-100" color="primary" size="lg" onClick={this.loggedIn}>Login</Button>
+                    </CardBody>
+                </Card>
+
             </div>
         )
     }

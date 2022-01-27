@@ -76,15 +76,12 @@ updateTaskStatus = () =>{
 }
 render(){
     const {tasks} =this.state
-        let tas = tasks.filter(task=>task.assignTo=="Developer 2").map(task=>{
+        let tas = tasks.map(task=>{
             return(
                 <tr key={task.id}>
                     <td>{task.id}</td>
                     <td>{task.taskName}</td>
                     <td>{task.projectName}</td>
-                    <td>{task.assignTo}</td>
-                    <td>{task.reviewTask}</td>
-                    <td>{task.status}</td>
                     <td>{task.devStatus}</td>
                     <td><Button color="success" size="sm" className="mr-2" onClick={()=>this.fillTaskStatus(task.id,task.taskName,task.projectName,task.assignTo,task.reviewTask,task.status,task.devStatus)}>Edit</Button></td>
                     
@@ -99,9 +96,6 @@ render(){
                             <td>Id</td>
                             <td>Task Name</td>
                             <td>Project Name</td>
-                            <td>Assign To</td>
-                            <td>Review Task</td>
-                            <td>Manager Status</td>
                             <td>My Status</td>
                             <td>Edit</td>
                         </tr>

@@ -49,13 +49,13 @@
   ],
   "task": [
     {
-      "id": "1",
       "taskName": "Task 1",
       "projectName": "Project 1",
       "assignTo": "Developer 1",
       "reviewTask": "Want To Work",
-      "status": "Pending",
-      "devStatus": "Pending"
+      "status": "Completed",
+      "devStatus": "Completed",
+      "id": "1"
     },
     {
       "taskName": "Task 2",
